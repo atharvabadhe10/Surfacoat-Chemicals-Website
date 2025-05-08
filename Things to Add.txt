@@ -11,3 +11,4 @@ About page -
 4)Contact Information
 
 
+*** Remove licensable caraousel image
