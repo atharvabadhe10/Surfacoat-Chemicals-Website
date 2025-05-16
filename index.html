@@ -16,6 +16,7 @@
     <title>Document</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
 
@@ -38,7 +39,7 @@
             </div>
           </li>
           <li><a href="">Testing</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </div>
 
@@ -126,7 +127,104 @@
       <hr style="height: 10px; color: black; margin: 0px 15% 0px 15%;">
       <hr style="height: 10px; color: black; margin: 0px 15% 50px 15%;">
       
-      <div id="chart_div"></div>
+      <!-- <div id="chart_div"></div> -->
+
+      <!-- <div class="chart-container">
+        <h2 style="text-align: center;">Yearly Chemical Production Growth</h2>
+        <div class="chart">
+            <div class="y-axis">
+                <div class="y-label">250</div>
+                <div class="y-label">200</div>
+                <div class="y-label">150</div>
+                <div class="y-label">100</div>
+                <div class="y-label">50</div>
+                <div class="y-label">0</div>
+            </div>
+            <div class="bars">
+                <div class="bar bar-1" data-value="50">
+                    <div></div>
+                    <span>2019</span>
+                </div>
+                <div class="bar bar-2" data-value="100">
+                    <div></div>
+                    <span>2020</span>
+                </div>
+                <div class="bar bar-3" data-value="150">
+                    <div></div>
+                    <span>2021</span>
+                </div>
+                <div class="bar bar-4" data-value="200">
+                    <div></div>
+                    <span>2022</span>
+                </div>
+                <div class="bar bar-5" data-value="250">
+                    <div></div>
+                    <span>2023</span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="chart-container">
+      <h2>Chemical Production Growth (in Tons)</h2>
+      <canvas id="productionChart"></canvas>
+    </div>
+  
+    <script>
+      const ctx = document.getElementById('productionChart').getContext('2d');
+  
+      const productionChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+          datasets: [{
+            label: 'Tons Produced',
+            data: [120, 150, 180, 220, 300, 400, 480],
+            borderColor: '#007bff',
+            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+            tension: 0.3,
+            fill: true,
+            pointRadius: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          responsive: true,
+          animation: {
+            duration: 1000,
+            easing: 'easeInOutQuart'
+          },
+          plugins: {
+            tooltip: {
+              mode: 'index',
+              intersect: false
+            },
+            legend: {
+              display: true,
+              labels: {
+                color: '#333'
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Year'
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Tons'
+              },
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+
       </br>
       </br>
       </br>

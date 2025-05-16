@@ -1,59 +1,131 @@
-.menu_bar {
-    background-color: black;
-    height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 30%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+}
+
+.table-section {
+  padding: 20px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      background-color: #333;
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      left: 0;
   }
-  
-  .menu_bar a img {
-    height: 80px;
+
+  .nav-links.active {
+      display: flex;
   }
-  
-  .menu_bar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+
+  .menu-icon {
+      display: block;
   }
-  
-  .menu_bar ul li {
-    padding: 10px 30px;
-    position: relative;
+
+  .cards {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  .menu_bar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.4s;
+
+  .card {
+      width: 80%;
   }
-  
-  .menu_bar ul li a:hover {
-    color: blue;
+
+  table {
+      font-size: 14px;
   }
-  
-  .dropdown_menu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: black;
-    z-index: 1;
-  }
-  
-  .menu_bar ul li:hover .dropdown_menu {
-    display: block;
-  }
-  
-  .dropdown_menu ul {
-    margin: 0;
-    padding: 10px;
-  }
-  
-  .dropdown_menu ul li {
-    padding: 5px 0;
-  }
-  
+}

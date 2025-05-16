@@ -13,26 +13,33 @@ body{
 .menu_bar{
     /* background-color: black; */
     font-weight: bold;
-    height: 20%;
+    height: 7%;                           
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
+    background-color: #d8d8d8;
+    color: white;
+    position: fixed;                           
+    left: 0;                                 
+    z-index: 1000;                            
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
 }
 
 .menu_bar a img{
-    margin-top: -4px;
-    margin-left: -77px;
-    margin-bottom: -4px;
-    height: 80px;
+    margin-top: 0px;                         
+    margin-left: -95px;                      
+    margin-bottom: 0px;                   
+    height: 60px;
 }
 
 .menu_bar ul{
     margin-top: 20px;
-    margin-right: 400px;
     list-style: none;
     display: flex;
+    justify-content: center;
+    flex:1;
 }
 
 .menu_bar ul li{
@@ -56,13 +63,27 @@ body{
     display: none;
 }
 
-.menu_bar ul li:hover .dropdown_menu{
-    background-color: rgb(220, 242, 248);
+.menu_bar ul li:hover .dropdown_menu,
+.menu_bar ul li:focus-within .dropdown_menu,
+.dropdown_menu:hover {
+    background-color: #d8d8d8;
     display: block;
     position: absolute;
-    left: 0;
-    top: 100%;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
     z-index: 1;
+    min-width: max-content;
+    white-space: nowrap;
+}
+
+.dropdown_menu ul li {
+    text-align: center;
+}
+
+.dropdown_menu ul {
+    padding: 0;
+    margin: 0;
 }
 
 .menu_bar ul li:hover .dropdown_menu ul{
@@ -70,19 +91,22 @@ body{
     margin: 10px;
 }
 
-/* .dropdown_menu ul li {
-    /* text-align: center; */
-    /* width: 150px;
-    padding: 10px; 
-} */
+ .dropdown_menu ul li {
+    white-space:nowrap;
+    padding: 10px 20px; 
+} 
 
 #info {
-    margin: 0 20% 0 25%;
-    width: 800px;
-    height: 450px;
+    margin: 100px auto;
+    max-width: 800px;
+    width: 90%;
+    height: auto;
+    padding: 2rem;
     background-image: linear-gradient(to right, rgba(102, 102, 102, 0.7), rgba(177, 177, 177, 0.9)), url(../assets/images/infobackground1.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 #info h1 {
@@ -133,7 +157,7 @@ body{
     box-shadow: 5px 5px 20px black;
 }
 
-.card.box-shadow:hover {
+.card.hover {
     transform: scale(1.03);
 }
 
@@ -154,7 +178,7 @@ body{
     transition: 0.3s;
 }
 
-.container{
+.container {
     /* background-color: white; */
 }
 
@@ -180,10 +204,104 @@ body{
     float: right;
 }
 
-#chart_div {
+/* #chart_div {
     margin-left: 15%;
     margin-right: 15%;
-}
+} */
+
+.chart-container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .chart {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    position: relative;
+    height: 300px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding-left: 50px; /* Adjusted for Y-axis labels */
+  }
+  
+  .y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    transform: translateX(-50%);
+  }
+  
+  .y-label {
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+    width: 40px;
+  }
+  
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .bar div {
+    width: 50%;
+    background: #4caf50;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .bar span {
+    position: absolute;
+    bottom: -25px; /* Adjusted for spacing */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .bar:hover div {
+    background: #45a049;
+  }
+  
+  .bar:hover::after {
+    content: attr(data-value) " tons";
+    position: absolute;
+    top: -30px;
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  /* Bar Heights */
+  .bar-1 div { height: 50px; }
+  .bar-2 div { height: 100px; }
+  .bar-3 div { height: 150px; }
+  .bar-4 div { height: 200px; }
+  .bar-5 div { height: 250px; }
+  
 
 
 
@@ -269,6 +387,6 @@ footer {
     .footerNav ul li{
         width: 100%;
         text-align: center;
-        margin: 10px;
+        margin:10px;
     }
 }

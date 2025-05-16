@@ -3,32 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Webpage</title>
     <link rel="stylesheet" href="trialStyle.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="menu_bar">
-        <a href="#">
-          <img src="/assets/images/NewSurfacoatLogo.jpg" alt="Surfacoat" />
-        </a>
-        <ul>
-          <li><a href="">Home</a></li>
-          <li>
-            <a href="products.html">Products <i class="fas fa-caret-down"></i></a>
-            <div class="dropdown_menu">
-              <ul>
-                <li><a href="products.html#pretreat">Pre-Treatment</a></li>
-                <li><a href="products.html#chromat">Chromatising</a></li>
-                <li><a href="#">Cleaners</a></li>
-                <li><a href="#">Stripper</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="">Testing</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact Us</a></li>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">My Company</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
-      </div>
-      
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to Our Website</h1>
+        <p>High-quality chemicals for various industries</p>
+        <button class="cta-button">Learn More</button>
+    </header>
+
+    <!-- Cards Section -->
+    <section class="cards">
+        <div class="card">
+            <h2>Quality Assurance</h2>
+            <p>We ensure the best quality in all our products.</p>
+        </div>
+        <div class="card">
+            <h2>Global Reach</h2>
+            <p>Our products are delivered worldwide.</p>
+        </div>
+        <div class="card">
+            <h2>Customer Support</h2>
+            <p>24/7 support for all your needs.</p>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="table-section">
+        <h2>Our Products</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Acetone</td>
+                <td>Solvent</td>
+                <td>$50</td>
+            </tr>
+            <tr>
+                <td>Sodium Hydroxide</td>
+                <td>Base</td>
+                <td>$30</td>
+            </tr>
+        </table>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
